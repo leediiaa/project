@@ -30,6 +30,9 @@ public class select extends HttpServlet {
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/** 
+    	* @wi.implements drivepilot/DP-292 this is a link to softwareUsecase 
+    	*/ 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
@@ -41,22 +44,22 @@ public class select extends HttpServlet {
 	    String studentId = null;
 	    
 	    if(courses==null){
-	       out.print("<script language=javascript>alert('Äú»¹Ã»ÓĞÑ¡Ôñ¿Î³Ì£¡£¡£¡');window.location.href='../FinalProject/selectCourse.jsp';</script>");
+	       out.print("<script language=javascript>alert('æ‚¨è¿˜æ²¡æœ‰é€‰æ‹©è¯¾ç¨‹ï¼ï¼ï¼');window.location.href='../FinalProject/selectCourse.jsp';</script>");
 	    }
 	    else{  
 	       SelectCourse sc = new SelectCourse();
 	       try {
 			studentId = sc.selectId(name);
 		} catch (ClassNotFoundException e1) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e1.printStackTrace();
 		} catch (SQLException e1) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e1.printStackTrace();
 		}
 	       try {
 			if(sc.isExit(courses,studentId)){
-			        out.print("<script language=javascript>alert('²»ÄÜÖØ¸´Ñ¡Ôñ¿Î³Ì£¡£¡£¡');window.location.href='../FinalProject/selectCourse.jsp';</script>");
+			        out.print("<script language=javascript>alert('ä¸èƒ½é‡å¤é€‰æ‹©è¯¾ç¨‹ï¼ï¼ï¼');window.location.href='../FinalProject/selectCourse.jsp';</script>");
 			   }else{
 			   for(int i=0;i<courses.length;i++){
 			     String courseId = courses[i];
@@ -67,10 +70,10 @@ public class select extends HttpServlet {
 			  
 			  }
 		} catch (ClassNotFoundException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 	     }
