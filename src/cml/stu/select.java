@@ -31,7 +31,7 @@ public class select extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	/** 
-    	* @wi.implements drivepilot/DP-292 this is a link to softwareUsecase 
+    	* @wi.implements drivepilot/DP-292 this is a link to softwareUsecase-292 
     	*/ 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
